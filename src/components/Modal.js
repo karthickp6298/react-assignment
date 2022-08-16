@@ -1,7 +1,6 @@
 const Modal = ({ toggleModal, userData, showModal }) => {
   const { login, name, phone, picture, location, email } = userData;
 
-  console.log(userData);
   return (
     <>
       {showModal && (

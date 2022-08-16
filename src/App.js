@@ -56,14 +56,12 @@ function App() {
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
-      console.log(searchText);
       if (searchText) {
         const filterData = peopleSearchData.filter(
           (ele) =>
             ele.name.first.toLowerCase().includes(searchText) ||
             ele.name.last.toLowerCase().includes(searchText)
         );
-        console.log(filterData);
         setPeopleSearchData([...filterData]);
       } else {
         setPeopleSearchData([...peopleData.data]);
@@ -97,11 +95,7 @@ function App() {
                 value={searchText}
                 placeholder="Search by name"
                 onChange={(e) => {
-                  console.log(searchText, e.target.value);
                   setSearchText(e.target.value);
-                }}
-                onBlur={() => {
-                  console.log("blur");
                 }}
               />
             </div>
